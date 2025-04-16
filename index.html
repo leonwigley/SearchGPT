@@ -36,7 +36,12 @@
             font-size: 36px;
             color: #ff8c00;
             margin: 20px 0 10px;
-            font-weight: normal;
+            font-weight: bolder;
+
+            && a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
 
         h2 {
@@ -142,15 +147,20 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>SearchGPT</h1>
+        <h1><a href="/">SearchGPT</a></h1>
         <h2>Looking for something? We find it.</h2>
         <form hx-post="/search" hx-target="#result" hx-swap="innerHTML" hx-indicator=".htmx-indicator">
             <input type="text" name="query" id="search" placeholder="🔍 Search anything" autocomplete="off" />
