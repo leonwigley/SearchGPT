@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"html"
 	"io"
 	"log"
@@ -15,6 +16,8 @@ import (
 )
 
 func main() {
+	fmt.Println("Now running the SearchGPT app. Please refer to the README.")
+
 	// Load .env file
 	err := godotenv.Load()
 	if err != nil {
@@ -53,7 +56,7 @@ func main() {
 
 		// Prepare xAI API request
 		requestBody, err := json.Marshal(map[string]interface{}{
-			"model": "grok-2-1212",
+			"model": "grok-3-mini",
 			"messages": []map[string]string{
 				{
 					"role":    "system",
