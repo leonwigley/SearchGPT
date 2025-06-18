@@ -16,7 +16,9 @@ import (
 )
 
 func main() {
-	fmt.Println("Now running the SearchGPT app. Please refer to the README.")
+	fmt.Println("\033[1;34mWelcome to the SearchGPT application!\033[0m")
+	fmt.Println("\033[1;32mThis app allows you to perform intelligent searches powered by xAI.\033[0m")
+	fmt.Println("\033[1;33mPlease refer to the README for setup and usage instructions.\033[0m")
 
 	// Load .env file
 	err := godotenv.Load()
@@ -35,6 +37,7 @@ func main() {
 	}
 
 	// Initialize Gin router
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
 	// Load HTML templates
